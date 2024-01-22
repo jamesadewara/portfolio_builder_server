@@ -39,6 +39,8 @@ INSTALLED_APPS = [
      # "livesync",
 
     'AuthApi.apps.AuthapiConfig',
+    'ProjectsApi.apps.ProjectsapiConfig',
+    'RecommendationApi.apps.RecommendationapiConfig',
 
 ]
 
