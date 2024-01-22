@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from .models import User
+from .serializers import PortfolioUserSerializer
+from djoser.views import UserViewSet
 
-# Create your views here.
+
+class PortfolioUserViewSet(UserViewSet):
+    queryset = User.objects.all()
+    serializer_class = PortfolioUserSerializer
+
+  
