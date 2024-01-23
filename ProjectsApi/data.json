@@ -1,0 +1,185 @@
+[
+    {
+        "id": "home",
+        "type": "header",
+        "properties": {
+            "text": "Home",
+            "icon": "home"
+        },
+        "child": [
+            {
+            "id": "hero",
+            "type": "section",
+            "properties": {
+                "default-style": "hero",
+                "alignment": "d-flex flex-column",
+                "cross-axis-alignment": "align-items-center",
+                "main-axis-alignment": "justify-content-center"
+            },
+            "child": [
+                {
+                    "id": "1",
+                    "type": "div",
+                    "properties": {
+                        "animation": "fade-in"
+                    },
+                    "child": [
+                        {
+                            "id": "1",
+                            "type": "h1",
+                            "properties": {
+                                "text": "Alex Smith"
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "type": "p",
+                            "properties": {
+                                "text": "I'm "
+                            },
+                            "child": [
+                                {
+                                    "id": "1",
+                                    "type": "span",
+                                    "properties": {
+                                        "animation": "typed",
+                                        "typed-text": "Designer, Developer, Freelancer, Photographer"
+                                    }
+
+                                }
+
+                            ]
+                        }
+                    ]
+                }
+            ]
+            }
+        ]
+    },
+    {
+        "id": "about",
+        "type": "header",
+        "properties": {
+            "text": "About",
+            "icon": "user"
+        },
+        "child": [
+            {
+                "id": "about",
+                "type": "section",
+                "properties": {
+                    "default-style": "about"
+                },
+                "child": [
+                    {
+                        "id": "1",
+                        "type": "div",
+                        "properties": {
+                            "default-style": "container"
+                        },
+                        "child": [
+                            {
+                                "id": "1",
+                                "type": "div",
+                                "properties": {
+                                    "default-style": "section-title"
+                                },
+                                "child": [
+                                    {
+                                        "id": "1",
+                                        "type": "h2",
+                                        "properties": {
+                                            "text": "About"
+                                        },
+                                        "child": [
+
+                                        ]
+                                    },
+                                    {
+                                        "id": "2",
+                                        "type": "p",
+                                        "properties": {
+                                            "text": "Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas."
+                                        },
+                                        "child": [
+                                            
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "1",
+                                "type": "div",
+                                "properties": {
+                                    "layout": "row"
+                                },
+                                "child": [
+                                    {
+                                        "id": "1",
+                                        "type": "div",
+                                        "properties": {
+                                            "layout": "col-lg-4",
+                                            "animation": "fade-right"
+                                        },
+                                        "child": [
+                                            {
+                                                "id": "1",
+                                                "type": "img",
+                                                "properties": {
+                                                    "src": "assets/img/profile-img.jpg",
+                                                    "default-style": "img-fluid",
+                                                    "alt": ""
+                                                },
+                                                "child": [
+                                                    
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "id": "2",
+                                        "type": "div",
+                                        "properties": {
+                                            "default-style": "content",
+                                            "layout": "col-lg-8",
+                                            "padding": "pt-4 pt-lg-0",
+                                            "animation": "fade-left"
+                                        },
+                                        "child": [
+                                            {
+                                                "id": "1",
+                                                "type": "h3",
+                                                "properties": {
+                                                    "text": "UI/UX Designer &amp; Web Developer."
+                                                },
+                                                "child": [
+                                                    {
+                                                        "id": "1",
+                                                        "type": "p",
+                                                        "properties": {
+                                                            "default-style": "fst-italic"
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": "1",
+                                                        "type": "p",
+                                                        "properties": {
+                                                            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et magna aliqua.",
+                                                            "default-style": "fst-italic"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+
+                    }
+                ]
+            }
+        ]
+
+    }
+]
