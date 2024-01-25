@@ -1,0 +1,131 @@
+{% extends "ProjectsApi/base.html" %}
+
+{% block body %}
+{% load static %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="{{ html.lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ html.head.title }}</title>
+
+    {% for meta in html.head.meta %}
+        <meta {% for key, value in meta.items %}{{ key }}="{{ value }}"{% if not forloop.last %} {% endif %}{% endfor %}>
+    {% endfor %}
+
+    {% for link in html.head.link %}
+        <link {% for key, value in link.items %}{{ key }}="{{ value }}"{% if not forloop.last %} {% endif %}{% endfor %}>
+    {% endfor %}
+
+    {% for script in html.head.script %}
+        <script {% for key, value in script.items %}{{ key }}="{{ value }}"{% if not forloop.last %} {% endif %}{% endfor %}></script>
+    {% endfor %}
+</head>
+<body>
+
+    <header id="header">
+        <nav id="nav-menu-container">
+            <ul>
+                {% for nav_item in html.body.header.nav.ul.li %}
+                    <li><a href="{{ nav_item.a.href }}">{{ nav_item.a.text }}</a></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </header>
+
+    {% for section in html.body.main.section %}
+        <section id="{{ section.id }}" class="{{ section.class }}">
+            <div {% for key, value in section.div.items %}{{ key }}="{{ value }}"{% if not forloop.last %} {% endif %}{% endfor %}>
+                
+                {% if section.div.h1 %}
+                    <h1>{{ section.div.h1 }}</h1>
+                {% endif %}
+
+                {% if section.div.p %}
+                    <p>
+                        {% if section.div.p.text %}
+                            {{ section.div.p.text }}
+                        {% endif %}
+                        {% if section.div.p.span %}
+                            <span {% for key, value in section.div.p.span.items %}{{ key }}="{% if key == 'data-typed-items' %}{{ value }}{% else %}{{ value }}"{% endif %}{% if not forloop.last %} {% endif %}{% endfor %}></span>
+                        {% endif %}
+                    </p>
+                {% endif %}
+                
+                {% if section.div.img %}
+                    <img {% for key, value in section.div.img.items %}{{ key }}="{{ value }}"{% if not forloop.last %} {% endif %}{% endfor %}>
+                {% endif %}
+                
+                {% if section.div.div %}
+                    <div {% for key, value in section.div.div.items %}{{ key }}="{{ value }}"{% if not forloop.last %} {% endif %}{% endfor %}>
+                        {% if section.div.div.row %}
+                            <div class="row">
+                                {% for row_item in section.div.div.row %}
+                                    <div {% for key, value in row_item.items %}{{ key }}="{{ value }}"{% if not forloop.last %} {% endif %}{% endfor %}>
+                                        {% if row_item.h3 %}
+                                            <h3>{{ row_item.h3 }}</h3>
+                                        {% endif %}
+                                        
+                                        {% if row_item.p %}
+                                            <p>{{ row_item.p }}</p>
+                                        {% endif %}
+                                        
+                                        {% if row_item.ul %}
+                                            <ul>
+                                                {% for ul_item in row_item.ul.li %}
+                                                    <li>
+                                                        <i class="{{ ul_item.i.class }}"></i>
+                                                        <strong>{{ ul_item.strong }}</strong>
+                                                        {{ ul_item.span }}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        {% endif %}
+                                        
+                                        {% if row_item.div %}
+                                            <div {% for key, value in row_item.div.items %}{{ key }}="{{ value }}"{% if not forloop.last %} {% endif %}{% endfor %}>
+                                                {% if row_item.div.row %}
+                                                    <div class="row">
+                                                        {% for inner_row_item in row_item.div.row %}
+                                                            <!-- Handle nested rows similarly to the outer row -->
+                                                        {% endfor %}
+                                                    </div>
+                                                {% endif %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
+                
+                <!-- Add similar logic for other elements as needed -->
+                
+            </div>
+        </section>
+    {% endfor %}
+
+    <!-- Add other sections as needed -->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>iPortfolio</span></strong>
+            </div>
+            <div class="credits">
+                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+</body>
+</html>
+
+
+{% endblock body %}

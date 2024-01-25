@@ -40,7 +40,6 @@ INSTALLED_APPS = [
 
     'AuthApi.apps.AuthapiConfig',
     'ProjectsApi.apps.ProjectsapiConfig',
-    'RecommendationApi.apps.RecommendationapiConfig',
 
 ]
 

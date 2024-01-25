@@ -4,10 +4,15 @@ from .models import Portfolio, PortfolioTemplate
 from .serializers import PortfolioSerializer, PortfolioTemplateSerializer
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.shortcuts import get_object_or_404
+import json
 
 def webView(request):
-    context = {}
-    return render(request, "ProjectsApi/portfolios/index.html", context)
+    get_template_path = "ProjectsApi/bootstrap_portfolio/index-copy.html"
+    get_json_path = "/home/adewara/Documents/Freelancer-Workspace/Projects/Project Portfolio Builder/PortfolioBuilderServer/ProjectsApi/templates/ProjectsApi/bootstrap_portfolio/package.json"
+    
+    json_data_str = json.loads(open(get_json_path, "r").read())
+    context = {'json_data': json_data_str}
+    return render(request, get_template_path, context)
 
 class PortfolioTemplateListCreateView(generics.ListCreateAPIView):
     permission_classes = (IsAuthenticated,)
