@@ -27,7 +27,8 @@ class Portfolio(models.Model):
 class PortfolioTemplate(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
-    image = models.ImageField(upload_to="thumbnail/img/templates/")
+    default_image = models.ImageField(upload_to="thumbnail/img/templates/default")
+    mobile_image = models.ImageField(upload_to="thumbnail/img/templates/mobile")
     template_file = models.FileField(upload_to="thumbnail/json/template/")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

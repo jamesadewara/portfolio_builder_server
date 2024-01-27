@@ -1,3 +1,4 @@
+import uuid
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 
@@ -18,18 +19,16 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
     # Common fields for both buyer and seller
+    id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True, primary_key=True)  # Use UUIDField
     email = models.EmailField(unique=True)
     username = models.CharField(max_length=255) 
 
     class Meta:
         db_table = 'auth_user'  # Specify the table name to match the existing User table
 
-    
-
-    #Admin fields
+    # Admin fields
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-
 
     objects = UserManager()
 

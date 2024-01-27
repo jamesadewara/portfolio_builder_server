@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import PortfolioUserViewSet, PortfolioTokenDestroyView
+from .views import PortfolioUserViewSet, PortfolioTokenDestroyView, PortfolioUserDeleteView
 
 urlpatterns = [
     path('users/', PortfolioUserViewSet.as_view({'post': 'create'}), name='user-create'),
@@ -7,5 +7,6 @@ urlpatterns = [
     # other Djoser URLs
     path('', include('djoser.urls')),
     path('', include('djoser.urls.jwt')),
+    path('delete/<int:user_id>/', PortfolioUserDeleteView.as_view(), name='user-delete'),
     path('token/destroy/', PortfolioTokenDestroyView.as_view(), name='token-destroy'),
 ]
